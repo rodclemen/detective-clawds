@@ -9,3 +9,6 @@ build/
 
 # Agent worktrees
 .claude/
+
+# The README's inline promo is a 720p copy uploaded to GitHub; only the 1080p original is kept here.
+promo/*-720p.mp4

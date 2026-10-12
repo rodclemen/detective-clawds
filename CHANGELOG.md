@@ -65,6 +65,8 @@ Every change to Justice League: Clawd Wars, and why.
 ### Added (promo)
 - **The promo**: a 1080p trailer with its own soundtrack (`promo/justice-league-clawd-wars-promo.mp4`) and its storyboard (`promo/storyboard.png`), rendered from the app's art by `Tools/RenderPromo` (`storyboard`, `video`, `audio` or a single `frame`). Its comments and sound-effect notes name DC things: the Javelin flying by, heat vision and ring blasts.
 
+- **The promo plays at the top of the README**: a 720p copy (8.8 MB, under GitHub's 10 MB web-upload limit) is uploaded to GitHub and embedded inline, with a note that GitHub starts videos muted and a link to the full 1080p file in `promo/`. The copy opens on the end card for half a second so its thumbnail isn't a black frame; it isn't kept in the repo (`.gitignore`).
+
 ### Checked
 - **Built, launched and soak-tested**: `./build.sh --no-install` builds the app, hook and screen saver, and `--chaos=90` (45 agents spawned over 90 seconds in window mode) reports no layout violations.
 

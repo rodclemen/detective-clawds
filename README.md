@@ -17,6 +17,10 @@
   <img src="https://img.shields.io/badge/free-to%20use-brightgreen" alt="Free to use">
 </p>
 
+https://github.com/user-attachments/assets/4e242255-e81c-4404-b4f0-06c967dc8a56
+
+<p align="center"><sub>🔊 <b>Click the speaker in the player for sound</b>: GitHub starts videos muted. Full 1080p version: <a href="promo/justice-league-clawd-wars-promo.mp4">promo/justice-league-clawd-wars-promo.mp4</a></sub></p>
+
 <p align="center">
   <img src="docs/desktop.png" alt="Sessions and agents fighting along the bottom of the screen: Sinestro blasting Superman in the air, Green Arrow and Captain Cold trading shots, Batman and Bane, Wonder Woman's bracelets against Lex Luthor's warsuit">
 </p>
