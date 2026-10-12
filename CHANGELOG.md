@@ -62,6 +62,9 @@ Every change to Justice League: Clawd Wars, and why.
 - **The README stands on its own**, laid out like a full product page: what it shows at a glance with the cast's signature moves, the AIs, the roster, the fights, every place and what moves there, the little things, install, build troubleshooting, how it works, uninstall and contributing.
 - **History files from the apps this engine grew out of are removed**, and `llms.txt` and this changelog describe only this app.
 
+### Added (promo)
+- **The promo**: a 1080p trailer with its own soundtrack (`promo/justice-league-clawd-wars-promo.mp4`) and its storyboard (`promo/storyboard.png`), rendered from the app's art by `Tools/RenderPromo` (`storyboard`, `video`, `audio` or a single `frame`). Its comments and sound-effect notes name DC things: the Javelin flying by, heat vision and ring blasts.
+
 ### Checked
 - **Built, launched and soak-tested**: `./build.sh --no-install` builds the app, hook and screen saver, and `--chaos=90` (45 agents spawned over 90 seconds in window mode) reports no layout violations.
 
