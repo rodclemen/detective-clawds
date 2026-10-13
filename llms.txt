@@ -2,7 +2,7 @@
 
 > The showcase page for Detective Clawds, one of the three universes in Clawd Clash (https://github.com/rodclemen/clawd-clash), a macOS app that shows running Claude Code, Codex, Qwen Code, Gemini CLI and GitHub Copilot CLI sessions as pixel-art characters fighting on the desktop or in a window. This repo holds no code: the app, its source and its full history live in Clawd Clash.
 
-- Detective Clawds has 110 heroes and 97 villains (Batclaw, Superb-Man, Wondrous Woman, the Flare, Green Lamplighter against the Jester, Lex Lugar, Darksyde, Sinistro and the rest) and 43 places, from the Lookout and the Night Grotto to Ohh and the Hall of Gloom.
+- Detective Clawds has 110 heroes and 97 villains (Batclawd, Superb-Man, Wondrous Woman, the Flare, Green Lamplighter against the Jester, Lex Lugar, Darksyde, Sinistro and the rest) and 43 places, from the Lookout and the Night Grotto to Ohh and the Hall of Gloom.
 - Install: `brew install --cask rodclemen/tap/justice-clawds-clawd-wars` installs Clawd Clash starting in Detective Clawds; `rodclemen/tap/clawd-clash` installs the same app.
 - [README.md](README.md): what it is, the cast and places, how to get it.
 - [CHANGELOG.md](CHANGELOG.md): what's new, in plain language.
