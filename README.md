@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/4e242255-e81c-4404-b4f0-06c967dc8a56
 ## Contents
 
 - [What it is](#what-it-is)
-- [Detective Clawds](#detective-claws)
+- [Detective Clawds](#detective-clawds)
 - [The roster](#the-roster)
 - [The places](#the-places)
 - [Window mode and the screen saver](#window-mode-and-the-screen-saver)
