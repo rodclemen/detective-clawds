@@ -12,6 +12,7 @@ The changes you'd notice in Detective Clawds, newest first. The full, detailed h
 - **The window steps aside** when no AI is running, and fades back when one starts.
 - **Keep Characters on Top**: off, the desktop crew stands just above your desktop icons and behind your windows.
 - **The screen saver picks its universe** in its own Options in System Settings: the same as the app, any of the three, or Random. It also no longer drops out of System Settings' list after an update.
+- **A new trailer.** The video at the top of this page is redrawn with the Detective Clawds names, art and logos: the cowl mask in the Night Beacon switching to DETECTIVE CLAWDS (its D and C at full strength), Batclawd, Superb-Man, the Jester and the rest, a horned kaiju in Megalopolis and the Clawdwing on the end card.
 
 ## 0.1.0: the first version
 
