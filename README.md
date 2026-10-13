@@ -96,6 +96,10 @@ Every shooter has its own shots: Superman's and Zod's heat vision, Darkseid's Om
 
 It opens in a window by default (switch to the desktop from the menu): the whole crew in a scene, with a card for every session: its project, what it's doing right now, your last prompt, its last reply, and its agents in a little tree.
 
+<p align="center">
+  <img src="docs/window-gotham.png" alt="Window mode in Gotham City: Batman with Robin and Nightwing, the Joker on Codex, Harley Quinn on Gemini CLI" width="760">
+</p>
+
 The scene is set **where the first session's character belongs**: the Fortress of Solitude for Superman, the Batcave for Batman, Themyscira for Wonder Woman, Apokolips for Darkseid. 43 places, each with something moving: the Bat-Signal on the clouds over rainy Gotham, the Daily Planet's globe turning while a red-blue blur streaks past, bats round the Batcave's waterfall and the Batcomputer scrolling, the aurora over the Fortress of Solitude, the Earth turning below the Watchtower's window as the Javelin glides by, searchlights and lightning over Arkham, Green Lanterns streaking past the Central Power Battery on Oa, Parademons over Apokolips' fire pits, Krypton quaking under its red sun, acid bubbling at Ace Chemicals, the kryptonite glowing in Lex's office, the Lazarus Pit bubbling in Nanda Parbat, lightning striking the wizard's throne on the Rock of Eternity, Brainiac's face looming over Kandor's bell, the fire and the stopped grandfather clock in Wayne Manor, and the Hall of Doom's eyes glowing over the swamp:
 
 <p align="center">
