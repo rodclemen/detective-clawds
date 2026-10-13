@@ -6,7 +6,7 @@ The changes you'd notice in Detective Claws, newest first. The full, detailed hi
 
 - **Clawstice League: Clawd Wars is now part of Clawd Clash**, one app with three universes: Detective Claws, Star Claws and Clawvel. The whole cast, every place and all fifteen comic-book transitions came along.
 - **New names and redrawn emblems.** Everyone and everywhere has a parody name now (Batclaw, Superb-Man, Wondrous Woman, the Flare, the Jester, the Lookout, Gothamburg, the Night Grotto…). Superb-Man wears a C-shield, the Batclaw family a cowl mask (two pointed ears over a domino mask), the Lamplighters a lamp, the speedsters a flame; the Night Beacon lights the sky, Batclaw throws a clawarang, and the Lance's tail fin reads CL.
-- **Upgrading takes care of itself.** Upgrading the `justice-league-clawd-wars` cask installs Clawd Clash starting in Detective Claws; it takes over the AIs the old app had connected and quits the old app.
+- **Upgrading takes care of itself.** The Homebrew cask `clawstice-league-clawd-wars` installs Clawd Clash starting in Detective Claws; Clawd Clash takes over the AIs the old app had connected and quits the old app.
 - **Pick a universe, or let it pick.** Settings → Universe switches between Detective Claws, Star Claws and Clawvel; switching recasts everyone on screen. **Random** changes universe on its own every 1, 5, 10, 15, 30 or 60 minutes, and in the window the whole window changes over with the new universe's transition.
 - **A Settings window.** Settings… (⌘,) puts every option in one place: universe, window, desktop, which AIs are connected, the screen saver. The menu is shorter.
 - **The window steps aside** when no AI is running, and fades back when one starts.

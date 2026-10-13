@@ -102,12 +102,12 @@ It opens in a window by default (switch to the desktop from the menu): the whole
 Clawstice League: Clawd Wars is now part of **[Clawd Clash](https://github.com/rodclemen/clawd-clash)**. It needs macOS 13+ (Apple Silicon or Intel) and at least one of Claude Code, Codex, Qwen Code, Gemini CLI or GitHub Copilot CLI.
 
 ```sh
-brew install --cask rodclemen/tap/justice-league-clawd-wars
+brew install --cask rodclemen/tap/clawstice-league-clawd-wars
 ```
 
 That installs Clawd Clash starting in Detective Claws. `brew install --cask rodclemen/tap/clawd-clash` installs the same app, or download the zip from [Clawd Clash's Releases](https://github.com/rodclemen/clawd-clash/releases), unzip it and drag **Clawd Clash** to Applications.
 
-Already have the old app? Upgrading the `justice-league-clawd-wars` cask installs Clawd Clash in Detective Claws, and it takes over the AIs the old app had connected.
+Already have the old app? Clawd Clash takes over the AIs it had connected and starts in Detective Claws, so the old app can go.
 
 Setup, permissions, building from source, uninstalling and everything else: see the [Clawd Clash README](https://github.com/rodclemen/clawd-clash#readme).
 
