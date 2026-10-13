@@ -19,7 +19,7 @@ let villains3: [Leader: Persona] = [
     .doomsday: Persona(name: "Doomsday", weapon: .melee, armoured: true, canSit: false, pivot: doomsdayShoulder,
                   bulk: 8, headTop: 2, signature: 2.8, callout: "RRRAAARGH!",
                   draw: drawDoomsday),
-    .bizarro: Persona(name: "Bizarro", weapon: .ranged, motion: .fly, shot: .ice, muzzle: (37, 32), handGun: false,
+    .bizarro: Persona(name: "Bizarro", weapon: .ranged, motion: .fly, shot: .ice, muzzle: (34, 31), handGun: false,
                   headTop: 22, signature: 3.2, callout: "Me am Bizarro!",
                   draw: drawBizarro),
     .metallo: Persona(name: "Metallo", weapon: .ranged, shot: .beam(core: C(0xE8FFE0), glow: C(0x3AE83A)), armoured: true,
@@ -569,8 +569,8 @@ private func drawDoomsday(_ c: PixelCanvas, _ p: Pose) {
 // MARK: - Bizarro
 
 /// Bizarro: Superman's backwards double, a chalk-white Clawd with grey cracks across his face, a black spit curl on
-/// the wrong side, a dopey grin, the blue suit with the S back to front, and a red cape. Freeze breath from his
-/// mouth, not heat vision. Signature: he says hello by standing on his hands, upside down and very pleased.
+/// the wrong side, a dopey grin, the blue suit with the S back to front, and a red cape. Freeze vision from his eyes
+/// (they go icy blue as he fires), not heat vision. Signature: he says hello by standing on his hands, upside down and very pleased.
 private func drawBizarro(_ c: PixelCanvas, _ p: Pose) {
     if let s = p.signature, s > 0.04, s < 0.96 {
         // Flip over, hold the handstand, flip back.
@@ -612,20 +612,17 @@ private func bizarroArt(_ c: PixelCanvas, _ p: Pose, handstand: Bool, wobble: Do
     // Cracks in the chalk.
     c.pattern(19, 27, ["C.......", ".C......", ".CC....."], ["C": crack])
     c.pattern(35, 28, [".C", "C.", "C."], ["C": crack])
-    // Uneven eyes, the big dopey grin (or a mouthful of frost).
-    c.rect(21, 29, 3, 3, ink); c.rect(32, 30, 2, 2, ink)
-    c.px(21, 29, white)
-    let blowing = p.fire != nil || p.ready
-    if blowing {
-        c.rect(27, 31, 5, 2, C(0x2A3A4A)); c.rect(28, 31, 3, 1, C(0xA8E8FF))
-        let i = Int(p.t * 18)
-        for n in 0..<4 {
-            let x = 32 + n * 2 + Int(noise(i + n) * 2), y = 31 + Int(noise(i * 3 + n) * 3) - 1
-            c.px(x, y, C(0xE8FAFF, 0.9 - Double(n) * 0.18))
-        }
+    // Uneven eyes, icy blue while the freeze vision is on, and the big dopey grin.
+    if p.fire != nil {
+        let ice = C(0x6AC8FF), frost = C(0xE8FAFF)
+        c.rect(21, 29, 3, 3, ice); c.rect(21, 30, 3, 1, frost)
+        c.rect(32, 30, 2, 2, ice); c.rect(32, 31, 2, 1, frost)
+        c.glowLine(33.5, 31, 33.5, 31, core: frost, glow: ice, coreR: 0.6, glowR: 2)
     } else {
-        c.pattern(25, 31, ["K........K", ".KWWWWWWK."], ["K": ink, "W": white])
+        c.rect(21, 29, 3, 3, ink); c.rect(32, 30, 2, 2, ink)
+        c.px(21, 29, white)
     }
+    c.pattern(25, 31, ["K........K", ".KWWWWWWK."], ["K": ink, "W": white])
     // The suit and its backwards S.
     c.rect(18, 33, 20, 5, blue)
     c.rect(37, 33, 1, 5, blueDark)

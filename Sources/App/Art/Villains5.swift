@@ -574,7 +574,7 @@ private func drawParallax(_ c: PixelCanvas, _ p: Pose) {
 // MARK: - Manhunter
 
 /// A Manhunter: the Guardians' first police, an android with a smooth red face (black eye slits, a carved mouth and
-/// a seam down the middle) inside a blue hood, a blue body with a gold belt and a red mantle, red boots, and a
+/// a seam down the middle) inside a blue hood, a blue body with a gold belt and a red mantle, red boots, and an
 /// energy baton. Signature: its eyes flare and a red scanning beam fans out, sweeping you top to bottom.
 private func drawManhunter(_ c: PixelCanvas, _ p: Pose) {
     let red = C(0xC8302A), redDark = C(0x8A1A18), redLight = C(0xE45A48)

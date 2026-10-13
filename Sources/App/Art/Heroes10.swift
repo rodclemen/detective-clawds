@@ -21,7 +21,7 @@ let heroes10: [Companion: Persona] = [
     .saturnGirl: Persona(name: "Saturn Girl", weapon: .magic, motion: .fly, magic: Magic(core: C(0xFFE0F0), glow: C(0xFF6AB8), jagged: false),
                   headTop: 17, signature: 3.0, callout: "Long live the Legion!",
                   draw: drawSaturnGirl),
-    .cosmicBoy: Persona(name: "Cosmic Boy", weapon: .magic, motion: .fly, magic: Magic(core: C(0xF0E0FF), glow: C(0xB86AFF)),
+    .cosmicBoy: Persona(name: "Cosmic Boy", weapon: .magic, motion: .fly, magic: Magic(core: C(0xF0E0FF), glow: C(0xB86AFF), jagged: false),
                   headTop: 18, signature: 3.2,
                   draw: drawCosmicBoy),
     .lightningLad: Persona(name: "Lightning Lad", weapon: .magic, motion: .fly, magic: Magic(core: C(0xF4F8FF), glow: C(0x7FB2FF)),
