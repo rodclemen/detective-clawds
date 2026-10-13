@@ -19,7 +19,7 @@ Where it all started, under its earlier name.
 
 - **207 characters**: 110 heroes and 97 villains, each with its own weapon, way of moving and (nearly all) a signature move when idle.
 - **43 places**, each with something moving, and the scene set where the first session's character belongs.
-- **Arch-enemies face off first**, the Lance and the Night-Glider pick people up, flyers take to the air, and the Batclaw family swings on grapnel lines.
+- **Arch-enemies face off first**, the Lance and the Clawwing pick people up, flyers take to the air, and the Batclaw family swings on grapnel lines.
 - **Claude Code plays the heroes** whenever another AI (Codex, Qwen Code, Gemini CLI, GitHub Copilot CLI) runs alongside it.
 - **Fifteen comic-book transitions** between places, in the window and the screen saver.
 - **Window mode**, with a card per session, and **a screen saver** that puts on a show of its own when nothing is running.
