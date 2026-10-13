@@ -90,7 +90,7 @@ The scene is set **where the first session's character belongs**: the Fortress o
 It opens in a window by default (switch to the desktop from the menu): the whole crew in a scene, with a card for every session: its project, what it's doing right now, your last prompt, its last reply, and its agents in a little tree. When no AI is running, the window steps aside, and it comes back when one starts.
 
 <p align="center">
-  <img src="docs/window-gotham.png" alt="Window mode in Gothamburg: Batclaw with Wren and Nightglider, the Jester on Codex, Harlee Quinn on Gemini CLI" width="760">
+  <img src="docs/window-gothamburg.png" alt="Window mode in Gothamburg: Batclaw with Wren and Nightglider, the Jester on Codex, Harlee Quinn on Gemini CLI" width="760">
 </p>
 
 **The screen saver** (Settings… → Screen Saver → Install…) shows the place full screen with the crew fighting across its floor, a card per session, name tags, a clock and a crawl of what happened lately, and moves somewhere new every 10 minutes with one of the fifteen transitions. With nothing running, it puts on a show of its own: a random crew of heroes against villains.
