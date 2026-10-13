@@ -51,6 +51,8 @@ final class OverlayController: NSObject, NSMenuDelegate, NSApplicationDelegate, 
     private let view: OverlayView
     private var sessions: [SessionSnapshot] = []
     private var actors: [Actor] = []
+    /// Everyone on screen, for picking the comic transitions between places.
+    var onStage: [Cast] { actors.map { switch $0.kind { case .leader(let c), .agent(let c): return c } } }
     private var fights: [Fight] = []
     private var cheering: Set<String> = []
     private var fightUntil: [String: Double] = [:]

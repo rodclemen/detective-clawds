@@ -61,7 +61,7 @@ SAVER="$APP/Contents/Resources/Justice League Clawd Wars.saver"
 mkdir -p "$SAVER/Contents/MacOS"
 compile "$SAVER/Contents/MacOS/JusticeLeagueClawdWarsSaver" -module-name JusticeLeagueClawdWarsSaver -emit-library -framework ScreenSaver \
     -Xlinker -install_name -Xlinker @rpath/JusticeLeagueClawdWarsSaver \
-    Sources/Shared/*.swift Sources/App/{Pixel,Characters,Fights,Roster,Pose,Locations,Cast,Accents,Habits}.swift \
+    Sources/Shared/*.swift Sources/App/{Pixel,Characters,Fights,Roster,Pose,Locations,Cast,Accents,Habits,ComicWipes}.swift \
     Sources/App/Art/*.swift Sources/App/Places/*.swift Sources/Saver/*.swift
 # Its picture under "Other" in System Settings (180×116).
 mkdir -p "$SAVER/Contents/Resources"

@@ -36,9 +36,10 @@ final class JusticeLeagueClawdWarsSaverView: ScreenSaverView {
     /// (anywhere at all with just the one). `visit` is where it went; nil until the first wipe (where the app says).
     private var period = 0
     private var visit: Location?
-    private let wipeLayer = CALayer(), wipeMask = CAShapeLayer()
-    private var wipe: (start: Double, clock: Bool)?
-    private var trips = 0                       // the wipes take turns: a hard edge, then a clock
+    /// A trip's comic-book transition (`ComicTrip`): each frame drawn whole, old place and new, into `comicLayer`.
+    private let comicLayer = CALayer()
+    private var comic: (trip: ComicTrip, start: Double, old: CGImage)?
+    private var lastComic: ComicWipe?
     /// With Justice League: Clawd Wars not running: a made-up crew, cast for `demoPlace` (a local or two among them), off somewhere
     /// new every `demoEvery`.
     private var demo: [SaverFeed.Session] = []
@@ -62,14 +63,11 @@ final class JusticeLeagueClawdWarsSaverView: ScreenSaverView {
             l.actions = Self.noAnimations
             root.addSublayer(l)
         }
-        // The old place, frozen, over the new one while the wipe takes it away (under the crew and the cards).
-        wipeLayer.anchorPoint = .zero
-        wipeLayer.magnificationFilter = .nearest
-        wipeLayer.actions = Self.noAnimations
-        wipeLayer.isHidden = true
-        wipeMask.actions = ["path": NSNull()]
-        wipeLayer.mask = wipeMask
-        root.addSublayer(wipeLayer)
+        // The transition, over the place while it plays (under the crew and the cards).
+        comicLayer.anchorPoint = .zero
+        comicLayer.actions = Self.noAnimations
+        comicLayer.isHidden = true
+        root.addSublayer(comicLayer)
     }
 
     required init?(coder: NSCoder) { super.init(coder: coder) }
@@ -127,10 +125,10 @@ final class JusticeLeagueClawdWarsSaverView: ScreenSaverView {
 
     // MARK: Travel
 
-    /// Off somewhere new: freeze what's on screen into the wipe layer, pick the place, and start the wipe (a hard edge
-    /// across the screen and a clock wipe, taking turns).
+    /// Off somewhere new: freeze what's on screen, pick the place, and start a comic-book transition to it.
     private func travel(_ now: Double) {
         lastTrip = now
+        let onStage = (crewed(now) ? feed?.sessions ?? [] : demo).flatMap { [$0.cast] + $0.agents.map(\.cast) }.map { Cast(id: $0) }
         let here = visit ?? lastLocation
         let crew = (running(now) ? feed?.sessions ?? [] : []).flatMap { [$0.cast] + $0.agents.map(\.cast) }.map { Cast(id: $0) }
         let homes = Set(crew.map(\.home)).subtracting([here])
@@ -139,16 +137,9 @@ final class JusticeLeagueClawdWarsSaverView: ScreenSaverView {
         if let room {
             let liveNow = liveLayer.contents.flatMap { CFGetTypeID($0 as CFTypeRef) == CGImage.typeID ? ($0 as! CGImage) : nil }
             if let frozen = Wipe.flatten([room.image] + (liveNow.map { [$0] } ?? [])) {
-                CATransaction.begin()
-                CATransaction.setDisableActions(true)
-                wipeLayer.contents = frozen
-                wipeLayer.frame = roomLayer.frame
-                wipeMask.frame = wipeLayer.bounds
-                wipeMask.path = Wipe.remaining(0, clock: trips % 2 == 0, in: wipeLayer.bounds)
-                wipeLayer.isHidden = false
-                CATransaction.commit()
-                wipe = (now, trips % 2 == 0)
-                trips += 1
+                let trip = ComicTrip.pick(after: lastComic, cast: onStage, to: next)
+                lastComic = trip.kind
+                comic = (trip, now, frozen)
             }
         }
         visit = next
@@ -220,14 +211,22 @@ final class JusticeLeagueClawdWarsSaverView: ScreenSaverView {
         } else {
             liveLayer.contents = nil
         }
-        if let w = wipe {
-            let k = (now - w.start) / Wipe.duration
+        if let w = comic {
+            let k = (now - w.start) / w.trip.duration
             if k >= 1 {
-                wipe = nil
-                wipeLayer.isHidden = true
-                wipeLayer.contents = nil
-            } else {
-                wipeMask.path = Wipe.remaining(k, clock: w.clock, in: wipeLayer.bounds)
+                comic = nil
+                comicLayer.isHidden = true
+                comicLayer.contents = nil
+            } else if let room, let new = Wipe.flatten([room.image] + (liveLayer.contents.flatMap {
+                CFGetTypeID($0 as CFTypeRef) == CGImage.typeID ? [$0 as! CGImage] : nil } ?? [])),
+                      let ctx = CGContext(data: nil, width: Int(picture.width), height: Int(picture.height), bitsPerComponent: 8,
+                                          bytesPerRow: 0, space: CGColorSpace(name: CGColorSpace.sRGB)!,
+                                          bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
+                // Drawn a screen point to a pixel: the art scaled up crisp, the lettering sharp enough.
+                w.trip.draw(ctx, old: w.old, new: new, k: k, in: CGRect(x: 0, y: 0, width: ctx.width, height: ctx.height))
+                comicLayer.contents = ctx.makeImage()
+                comicLayer.frame = picture
+                comicLayer.isHidden = false
             }
         }
 

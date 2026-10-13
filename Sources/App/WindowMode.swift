@@ -557,10 +557,10 @@ final class SceneView: NSView {
     /// The animated layer's canvas, reused every frame until the scene's pixel size changes.
     private var live: PixelCanvas?
     private var lastLive: CGImage?
-    /// Changing place: the old picture, frozen, wiped away over the new one (a hard edge and a clock wipe, taking
-    /// turns), as the screen saver does.
-    private var wipe: (old: CGImage, start: Double, clock: Bool)?
-    private var clockWipeNext = false
+    /// Changing place: the old picture, frozen, giving way to the new one in a comic-book transition (`ComicTrip`), as
+    /// the screen saver does.
+    private var wipe: (old: CGImage, start: Double, trip: ComicTrip)?
+    private var lastComic: ComicWipe?
     private let sprites = SpriteLayers()
     /// CLAWD_SHOT captures the window by drawing its views, which can't see layers: draw the old way then.
     static let drawsItself = ProcessInfo.processInfo.environment["CLAWD_SHOT"] != nil
@@ -584,8 +584,9 @@ final class SceneView: NSView {
         guard room?.size != bounds.size || room?.location != location else { return }
         if let old = room, old.size == bounds.size, old.location != location,
            let frozen = Wipe.flatten([old.image] + (old.location.hasAnimatedLayer ? lastLive.map { [$0] } ?? [] : [])) {
-            wipe = (frozen, Date().timeIntervalSince1970, clockWipeNext)
-            clockWipeNext.toggle()
+            let trip = ComicTrip.pick(after: lastComic, cast: controller.onStage, to: location)
+            lastComic = trip.kind
+            wipe = (frozen, Date().timeIntervalSince1970, trip)
         }
         let c = PixelCanvas(g.pw, g.ph)
         location.drawStatic(c, floorRows: g.floorRows)
@@ -601,26 +602,28 @@ final class SceneView: NSView {
         guard let controller else { return [] }
         let g = geometry, now = Date().timeIntervalSince1970
         var items: [OverlayController.DrawItem] = []
+        var liveNow: CGImage?
         if controller.location.hasAnimatedLayer {   // a still picture has nothing to add
             let canvas: PixelCanvas
             if let live, live.w == g.pw, live.h == g.ph { canvas = live; canvas.clear() } else { canvas = PixelCanvas(g.pw, g.ph); live = canvas }
             controller.location.drawAnimated(canvas, floorRows: g.floorRows, t: now)
             if let img = canvas.makeImage() {   // in screen coordinates, like the crew's items
                 lastLive = img
+                liveNow = img
                 items.append(OverlayController.DrawItem(image: img, rect: g.drawRect.offsetBy(dx: origin.x, dy: origin.y)))
             }
         }
-        // The old place over the new, less of it each frame; under the crew.
+        // The transition, old place and new drawn whole over the scene; under the crew.
         if let w = wipe {
-            let k = (now - w.start) / Wipe.duration
+            let k = (now - w.start) / w.trip.duration
             if k >= 1 {
                 wipe = nil
-            } else if let ctx = CGContext(data: nil, width: w.old.width, height: w.old.height, bitsPerComponent: 8, bytesPerRow: 0,
-                                          space: CGColorSpace(name: CGColorSpace.sRGB)!,
+            } else if let new = room.flatMap({ Wipe.flatten([$0.image] + (liveNow.map { [$0] } ?? [])) }),
+                      let ctx = CGContext(data: nil, width: w.old.width * 4, height: w.old.height * 4, bitsPerComponent: 8,
+                                          bytesPerRow: 0, space: CGColorSpace(name: CGColorSpace.sRGB)!,
                                           bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
-                let r = CGRect(x: 0, y: 0, width: w.old.width, height: w.old.height)
-                ctx.addPath(Wipe.remaining(k, clock: w.clock, in: r)); ctx.clip()
-                ctx.draw(w.old, in: r)
+                // Four pixels to every art pixel, so the lettering stays sharp.
+                w.trip.draw(ctx, old: w.old, new: new, k: k, in: CGRect(x: 0, y: 0, width: ctx.width, height: ctx.height))
                 if let img = ctx.makeImage() {
                     items.append(OverlayController.DrawItem(image: img, rect: g.drawRect.offsetBy(dx: origin.x, dy: origin.y)))
                 }

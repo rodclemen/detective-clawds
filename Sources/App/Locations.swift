@@ -60,26 +60,8 @@ let places: [Location: Place] = scenes1.merging(scenes2) { a, _ in a }.merging(s
     .merging(scenes4) { a, _ in a }.merging(scenes5) { a, _ in a }.merging(scenes6) { a, _ in a }.merging(scenes7) { a, _ in a }
 
 
-/// The wipes between places, shared by the window and the screen saver: what's left of the old
-/// picture `k` of the way through, right of an edge sweeping left to right, or what a clock hand sweeping round from
-/// twelve hasn't reached yet.
+/// Changing place, shared by the window and the screen saver (the transitions themselves are `ComicTrip`).
 enum Wipe {
-    static let duration = 1.2
-
-    static func remaining(_ k: Double, clock: Bool, in r: CGRect) -> CGPath {
-        let path = CGMutablePath()
-        if clock {
-            let c = CGPoint(x: r.midX, y: r.midY), top = CGFloat.pi / 2
-            path.move(to: c)
-            path.addArc(center: c, radius: hypot(r.width, r.height), startAngle: top - 2 * .pi * k,
-                        endAngle: top - 2 * .pi, clockwise: true)
-            path.closeSubpath()
-        } else {
-            path.addRect(CGRect(x: r.minX + r.width * k, y: r.minY, width: r.width * (1 - k), height: r.height))
-        }
-        return path
-    }
-
     /// One picture from several stacked (the place and what moves there), to freeze for a wipe.
     static func flatten(_ images: [CGImage]) -> CGImage? {
         guard let first = images.first else { return nil }
