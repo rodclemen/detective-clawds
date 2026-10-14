@@ -102,10 +102,12 @@ It opens in a window by default (switch to the desktop from the menu): the whole
 Detective Clawds is part of **[Clawd Clash](https://github.com/rodclemen/clawd-clash)**. It needs macOS 13+ (Apple Silicon or Intel) and at least one of Claude Code, Codex, Qwen Code, Gemini CLI or GitHub Copilot CLI.
 
 ```sh
-brew install --cask rodclemen/tap/detective-clawds
+brew tap rodclemen/tap
+brew trust rodclemen/tap      # newer Homebrew asks you to trust a third-party tap once
+brew install --cask detective-clawds
 ```
 
-That installs Clawd Clash starting in Detective Clawds. `brew install --cask rodclemen/tap/clawd-clash` installs the same app, or download the zip from [Clawd Clash's Releases](https://github.com/rodclemen/clawd-clash/releases), unzip it and drag **Clawd Clash** to Applications.
+That installs Clawd Clash starting in Detective Clawds. `brew install --cask clawd-clash` installs the same app, or download the zip from [Clawd Clash's Releases](https://github.com/rodclemen/clawd-clash/releases), unzip it and drag **Clawd Clash** to Applications.
 
 Already have the old app? Clawd Clash takes over the AIs it had connected and starts in Detective Clawds, so the old app can go.
 
