@@ -1,4 +1,4 @@
-# What's new in Justice Clawds: Clawd Wars
+# What's new in Detective Clawds
 
 The changes you'd notice in Detective Clawds, newest first. The full, detailed history lives in [Clawd Clash](https://github.com/rodclemen/clawd-clash/blob/main/CHANGELOG.md).
 
@@ -6,7 +6,7 @@ The changes you'd notice in Detective Clawds, newest first. The full, detailed h
 
 - **Justice Clawds: Clawd Wars is now part of Clawd Clash**, one app with three universes: Detective Clawds, Star Clawds and Marvelous Clawds. The whole cast, every place and all fifteen comic-book transitions came along.
 - **New names and redrawn emblems.** Everyone and everywhere has a parody name now (Batclawd, Superb-Man, Wondrous Woman, the Flare, the Jester, the Lookout, Gothamburg, the Night Grotto…). Superb-Man wears a C-shield, the Batclawd family a cowl mask (two pointed ears over a domino mask), the Lamplighters a lamp, the speedsters a flame; the Night Beacon lights the sky, Batclawd throws a clawdarang, and the Lance's tail fin reads CL.
-- **Upgrading takes care of itself.** The Homebrew cask `justice-clawds-clawd-wars` installs Clawd Clash starting in Detective Clawds; Clawd Clash takes over the AIs the old app had connected and quits the old app.
+- **Upgrading takes care of itself.** The Homebrew cask `detective-clawds` installs Clawd Clash starting in Detective Clawds; Clawd Clash takes over the AIs the old app had connected and quits the old app.
 - **Pick a universe, or let it pick.** Settings → Universe switches between Detective Clawds, Star Clawds and Marvelous Clawds; switching recasts everyone on screen. **Random** changes universe on its own every 1, 5, 10, 15, 30 or 60 minutes, and in the window the whole window changes over with the new universe's transition.
 - **A Settings window.** Settings… (⌘,) puts every option in one place: universe, window, desktop, which AIs are connected, the screen saver. The menu is shorter.
 - **The window steps aside** when no AI is running, and fades back when one starts.

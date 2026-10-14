@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/app-icon.png" width="180" alt="Justice Clawds: Clawd Wars icon: the Jester levelling his revolver at Batclawd under the Night Beacon in a Gothamburg night sky">
+  <img src="docs/app-icon.png" width="180" alt="Detective Clawds icon: the Jester levelling his revolver at Batclawd under the Night Beacon in a Gothamburg night sky">
 </p>
 
-<h1 align="center">Justice Clawds: Clawd Wars</h1>
+<h1 align="center">Detective Clawds</h1>
 
 <p align="center">
   <b>Your Claude Code, Codex, Qwen Code, Gemini CLI and GitHub Copilot CLI sessions, as a pixel-art Detective Clawds battle on your desktop.</b><br>
@@ -21,7 +21,7 @@ https://github.com/user-attachments/assets/759c0556-da82-4b71-a855-5ab168f14f6f
 
 <p align="center"><sub>🔊 <b>Click the speaker in the player for sound</b>: GitHub starts videos muted. Full 1080p version: <a href="promo/justice-league-clawd-wars-promo.mp4">promo/justice-league-clawd-wars-promo.mp4</a></sub></p>
 
-> **Justice Clawds: Clawd Wars is now part of [Clawd Clash](https://github.com/rodclemen/clawd-clash)**, one app with three universes. This page shows off its Detective Clawds universe; the app, its source and everything else live over there. [Get it below.](#get-it)
+> **Detective Clawds (formerly Justice Clawds: Clawd Wars) is a universe of [Clawd Clash](https://github.com/rodclemen/clawd-clash)**, one app with three universes. This page shows off its Detective Clawds universe; the app, its source and everything else live over there. [Get it below.](#get-it)
 
 <p align="center">
   <img src="docs/desktop.png" alt="Sessions and agents fighting along the bottom of the screen: Sinistro blasting Superb-Man in the air, Emerald Archer and Captain Chill trading shots, Batclawd and Bain, Wondrous Woman's bracelets against Lex Lugar's warsuit">
@@ -99,10 +99,10 @@ It opens in a window by default (switch to the desktop from the menu): the whole
 
 ## Get it
 
-Justice Clawds: Clawd Wars is now part of **[Clawd Clash](https://github.com/rodclemen/clawd-clash)**. It needs macOS 13+ (Apple Silicon or Intel) and at least one of Claude Code, Codex, Qwen Code, Gemini CLI or GitHub Copilot CLI.
+Detective Clawds is part of **[Clawd Clash](https://github.com/rodclemen/clawd-clash)**. It needs macOS 13+ (Apple Silicon or Intel) and at least one of Claude Code, Codex, Qwen Code, Gemini CLI or GitHub Copilot CLI.
 
 ```sh
-brew install --cask rodclemen/tap/justice-clawds-clawd-wars
+brew install --cask rodclemen/tap/detective-clawds
 ```
 
 That installs Clawd Clash starting in Detective Clawds. `brew install --cask rodclemen/tap/clawd-clash` installs the same app, or download the zip from [Clawd Clash's Releases](https://github.com/rodclemen/clawd-clash/releases), unzip it and drag **Clawd Clash** to Applications.
@@ -113,7 +113,7 @@ Setup, permissions, building from source, uninstalling and everything else: see 
 
 ## What's new
 
-See [CHANGELOG.md](CHANGELOG.md) for what's new in Justice Clawds: Clawd Wars, in plain language.
+See [CHANGELOG.md](CHANGELOG.md) for what's new in Detective Clawds, in plain language.
 
 ## License
 
