@@ -21,7 +21,7 @@ https://github.com/user-attachments/assets/759c0556-da82-4b71-a855-5ab168f14f6f
 
 <p align="center"><sub>🔊 <b>Click the speaker in the player for sound</b>: GitHub starts videos muted. Full 1080p version: <a href="promo/justice-league-clawd-wars-promo.mp4">promo/justice-league-clawd-wars-promo.mp4</a></sub></p>
 
-> **Detective Clawds (formerly Justice Clawds: Clawd Wars) is a universe of [Clawd Clash](https://github.com/rodclemen/clawd-clash)**, one app with three universes. This page shows off its Detective Clawds universe; the app, its source and everything else live over there. [Get it below.](#get-it)
+> **Detective Clawds (formerly Justice Clawds: Clawd Wars) is a universe of [Clawd Clash](https://github.com/rodclemen/clawd-clash)**, one app with multiple universes. This page shows off its Detective Clawds universe; the app, its source and everything else live over there. [Get it below.](#get-it)
 
 <p align="center">
   <img src="docs/desktop.png" alt="Sessions and agents fighting along the bottom of the screen: Sinistro blasting Superb-Man in the air, Emerald Archer and Captain Chill trading shots, Batclawd and Bain, Wondrous Woman's bracelets against Lex Lugar's warsuit">
@@ -95,7 +95,7 @@ It opens in a window by default (switch to the desktop from the menu): the whole
 
 **The screen saver** (Settings… → Screen Saver → Install…) shows the place full screen with the crew fighting across its floor, a card per session, name tags, a clock and a crawl of what happened lately, and moves somewhere new every 10 minutes with one of the fifteen transitions. With nothing running, it puts on a show of its own: a random crew of heroes against villains.
 
-**Two more universes come with it**: **Star Clawds** and **Marvelous Clawds**. Pick one in **Settings… → Universe**, or pick **Random** and it changes universe on its own every 1, 5, 10, 15, 30 or 60 minutes. A scene never mixes them.
+**More universes come with it**: **Star Clawds**, **Marvelous Clawds** and **Doctor Clawd**. Pick one in **Settings… → Universe**, or pick **Random** and it changes universe on its own every 1, 5, 10, 15, 30 or 60 minutes. A scene never mixes them.
 
 ## Get it
 
