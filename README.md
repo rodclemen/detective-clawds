@@ -99,7 +99,7 @@ It opens in a window by default (switch to the desktop from the menu): the whole
 
 ## Get it
 
-Detective Clawds is part of **[Clawd Clash](https://github.com/rodclemen/clawd-clash)**. It needs macOS 13+ on Apple silicon (Clawd Clash 3.5.0 was the last release for Intel Macs) and at least one of Claude Code, Codex, Qwen Code, Gemini CLI or GitHub Copilot CLI.
+Detective Clawds is part of **[Clawd Clash](https://github.com/rodclemen/clawd-clash)**. It needs macOS 13+ on Apple silicon and at least one of Claude Code, Codex, Qwen Code, Gemini CLI or GitHub Copilot CLI.
 
 ```sh
 brew tap rodclemen/tap
