@@ -2,6 +2,10 @@
 
 The changes you'd notice in Detective Clawds, newest first. The full, detailed history lives in [Clawd Clash](https://github.com/rodclemen/clawd-clash/blob/main/CHANGELOG.md).
 
+## 2026-10-17
+
+- **The trailer plays for everyone.** The video at the top of this page only played for people signed in to GitHub. It's uploaded again, freshly rendered with today's BRING YOUR OWN AI line-up: every AI Clawd Clash supports, pi included.
+
 ## 3.0.0: joins Clawd Clash
 
 - **Justice Clawds: Clawd Wars is now part of Clawd Clash**, one app with three universes: Detective Clawds, Star Clawds and Marvelous Clawds. The whole cast, every place and all fifteen comic-book transitions came along.
