@@ -95,7 +95,7 @@ It opens in a window by default (switch to the desktop from the menu): the whole
 
 **The screen saver** (Settings… → Screen Saver → Install…) shows the place full screen with the crew fighting across its floor, a card per session, name tags, a clock and a crawl of what happened lately, and moves somewhere new every 10 minutes with one of the fifteen transitions. With nothing running, it puts on a show of its own: a random crew of heroes against villains.
 
-**More universes come with it**: **Star Clawds**, **Marvelous Clawds**, **Doctor Clawd**, **[The Clawd Files](https://github.com/rodclemen/the-clawd-files)** and **[Stevie Clawdberg](https://github.com/rodclemen/stevie-clawdberg)**. Pick one in **Settings… → Universe**, or pick **Random** and it changes universe on its own every 1, 5, 10, 15, 30 or 60 minutes. A scene never mixes them.
+**More universes come with it**: **Star Clawds**, **Marvelous Clawds**, **Doctor Clawd**, **[The Clawd Files](https://github.com/rodclemen/the-clawd-files)**, **[Stevie Clawdberg](https://github.com/rodclemen/stevie-clawdberg)** and **[Clawd of the Rings](https://github.com/rodclemen/clawd-of-the-rings)**. Pick one in **Settings… → Universe**, or pick **Random** and it changes universe on its own every 1, 5, 10, 15, 30 or 60 minutes. A scene never mixes them.
 
 ## Get it
 
